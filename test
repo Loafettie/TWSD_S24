@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background: url('https://64.media.tumblr.com/2c9281b2d5ca5088e0e9e66356f46c06/7cf915f60095705b-63/s400x600/71d2f2a0e7ac567756a08cbfc8ff65d20ad41200.gifv') repeat;
+        }
+        .header {
+            background-color: #fff;
+            color: #834333;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 30px solid transparent;
+            border-image: url('https://64.media.tumblr.com/tumblr_lsznmtd08v1ql1l0v.gif') 60 repeat;
+        }
+        .back-button {
+            display: block;
+            margin: 10px 20px;
+            text-decoration: none;
+            color: #834333;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            color: #ec407a;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .troubleshooting {
+            margin-top: 40px;
+        }
+        .troubleshooting h2 {
+            color: #834333;
+            border-bottom: 2px solid #834333;
+            padding-bottom: 10px;
+        }
+        .troubleshooting p {
+            color: #834333;
+            line-height: 1.6;
+        }
+        .troubleshooting img {
+            border: 3px solid #834333;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: block;
+            max-width: 100%;
+        }
+        .troubleshooting pre {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 11px;
+        }
+        iframe {
+            border: 3px solid #834333;
+            border-radius: 5px;
+            margin: 20px 0;
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Week 2</div>
+    <a href="index.html" class="back-button">&larr; Back to Home</a>
+    <div class="container">
+        <h2>Week 2 Stuff</h2>
+        <p>TBD</p>
+
+        <div class="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <p>Here is where I keep a record of all the issues people were having and how we might be able to fix them!</p>
+            <hr>
+            <p><b>Problem</b>: Tableau is displaying the graph, but it is a static image and there is extra code?</p>
+            <a href="https://ibb.co/xq3mGP6">
+                <img src="https://i.ibb.co/60NvbVF/Whats-App-Image-2025-01-26-at-17-45-45-4b86f4eb.jpg" alt="Static Tableau Image">
+            </a>
+            <p><b>Code Used:</b></p>
+            <pre>
+&lt;div class='tableauPlaceholder' id='viz1737946080854' style='position: relative'&gt;
+  &lt;noscript&gt;&lt;a href='#'&gt;
+    &lt;img alt='General Government Debt to GDP Ratios' 
+    src='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1_rss.png' 
+    style='border: none' /&gt;
+  &lt;/a&gt;&lt;/noscript&gt;
+  &lt;object class='tableauViz' style='display:none;'&gt;
+    &lt;param name='host_url' value='https://public.tableau.com/' /&gt; 
+    &lt;param name='embed_code_version' value='3' /&gt; 
+    &lt;param name='site_root' value='' /&gt;
+    &lt;param name='name' value='GeneralGovernmentDebttoGDPRatios/Sheet1' /&gt;
+    &lt;param name='tabs' value='no' /&gt;
+    &lt;param name='toolbar' value='yes' /&gt;
+    &lt;param name='static_image' 
+    value='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1.png' /&gt;
+  &lt;/object&gt;
+&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var divElement = document.getElementById('viz1737946080854');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';
+    vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+&lt;/script&gt;
+            </pre>
+            <p><b>Solution</b>: Replace the extra code with a simplified <code>iframe</code> to embed the active Tableau visualization.</p>
+            <p><b>Corrected Code:</b></p>
+            <pre>
+&lt;iframe 
+  src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
+  width="100%" 
+  height="600"&gt;
+&lt;/iframe&gt;
+            </pre>
+            <p><b>Active Visualization:</b></p>
+            <iframe 
+                src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>
