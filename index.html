@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telling Stories with Data</title>
+    <link rel="icon" href="https://64.media.tumblr.com/0026239913bf82dd86f251cf64b2496b/tumblr_inline_p93rwsKX781rhwzwl_75sq.gif" type="image/gif">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background: url('https://64.media.tumblr.com/2c9281b2d5ca5088e0e9e66356f46c06/7cf915f60095705b-63/s400x600/71d2f2a0e7ac567756a08cbfc8ff65d20ad41200.gifv') repeat;
+        }
+        .header {
+            background-color: #fff;
+            color: #efaab8;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 30px solid transparent;
+            border-image: url('https://64.media.tumblr.com/tumblr_lsznmtd08v1ql1l0v.gif') 60 repeat;
+            position: relative;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            top: -40px;
+        }
+        .button {
+            background: url('https://64.media.tumblr.com/1b881285db3ced8f97dd226efe67e3ec/tumblr_inline_mjs5n2TQY41qz4rgp.gif') no-repeat center;
+            background-size: contain;
+            color: #834333; 
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            width: 150px;
+            height: 70px;
+            display: flex;
+            align-items: flex-end; 
+            justify-content: center;
+            padding-bottom: 5px; 
+            background-position: center bottom; 
+        }
+        .button:hover {
+            color: #ec407a; 
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .stamps {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow-x: auto; 
+            gap: 20px;
+            scrollbar-color: #ec407a #fff; 
+            scrollbar-width: thin; 
+        }
+        .stamps img {
+            max-width: 100px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .stamps::-webkit-scrollbar {
+            height: 10px;
+        }
+        .stamps::-webkit-scrollbar-track {
+            background: #fff;
+        }
+        .stamps::-webkit-scrollbar-thumb {
+            background-color: #ec407a;
+            border-radius: 10px;
+        }
+        .intro {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .intro img.profile {
+            border-radius: 10px;
+            height: 150px;
+            width: auto;
+            margin-right: 20px;
+        }
+        .intro img.welcome {
+            max-height: 250px;
+            width: auto;
+            margin-left: 20px;
+        }
+        .intro-text {
+            line-height: 1.6;
+            flex: 1;
+            color: #834333; 
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+            color: #ec407a;
+        }
+        .links img {
+            height: 15px;
+            width: 15px;
+            margin-right: 5px;
+        }
+        .office-hours {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #834333; 
+            display: flex;
+            align-items: center;
+        }
+        .office-hours img {
+            height: 15px;
+            width: 15px;
+            margin-right: 5px;
+        }
+        .intro-text b {
+            color: #ec407a;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">TA Resources: Telling Stories with Data</div>
+
+    <div class="buttons">
+        <a href="week1.html" class="button">Week 1</a>
+        <a href="week2.html" class="button">Week 2</a>
+        <a href="week3.html" class="button">Week 3</a>
+        <a href="week4.html" class="button">Week 4</a>
+        <a href="week5.html" class="button">Week 5</a>
+        <a href="week6.html" class="button">Week 6</a>
+        <a href="extras.html" class="button">Extras</a>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <img src="path/to/your/image.jpg" alt="Melida's Profile Picture" class="profile">
+            <div class="intro-text">
+                <p>Hello! I'm your TA for TSWD, Spring '24! My name is <b>Melida</b>, my pronouns are <b>they/them</b>, and I'm a current, second-year <b>Arts Management</b> student!</p>
+                <p><img src="https://64.media.tumblr.com/8f0cc4f8189eb9ebce27211f40c460ad/7cf915f60095705b-6c/s75x75_c1/15f615a2afc021f5c6a8267a814de72059547acc.gifv" alt="Why I like TSWD"> <b>What do I like most about TSWD?</b> This class allowed me to draw on my past work experience—helping art students craft portfolios and articulate their identity and personal narratives—while also tapping into my personal background with (light!) coding (for platforms like MySpace, Neopets, and Geocities)! Together, with this class, I learned how to blend the two into, well, <i> telling stories with data</i>!</p>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/melidahernandez/">
+                        <img src="https://64.media.tumblr.com/a7902e8f1306df5d0a07a9641898eade/tumblr_inline_nosyuar7Em1ry72eo_75sq.gifv" alt="LinkedIn">LinkedIn</a>
+                    <a href="https://github.com/Loafettie">
+                        <img src="https://cdn-icons-png.freepik.com/512/2111/2111425.png" alt="GitHub">GitHub</a>
+                    <a href="mailto:mrhernan@andrew.cmu.edu">
+                        <img src="https://64.media.tumblr.com/c76dbf6649ab90f87cf9625965646698/7cf915f60095705b-00/s75x75_c1/634b4d7157d2e4175c871bca1fbdd430accc1855.png" alt="Email">Email</a>
+                    <a href="https://cmu.zoom.us/j/4939327945">
+                        <img src="https://64.media.tumblr.com/22c98b1852f3f93e4a3b206e3a464abd/7cf915f60095705b-a9/s75x75_c1/f7d95ce710a574f061fcb3219546558d38ab46c5.png" alt="Zoom">Zoom</a>
+                </div>
+                <div class="office-hours">
+                    <img src="https://64.media.tumblr.com/647ee03e95ac6bde4dd685cd65565397/7cf915f60095705b-65/s75x75_c1/b07baa567b4fe7d96443d884eebb7b0c6011729e.png" alt="Office Hours"> <b>Office Hours</b>: Sunday 6-8 PM, Tuesday 4-6 PM, Thursday by Appointment
+                </div>
+            </div>
+            <img src="https://64.media.tumblr.com/cfb967961aa4d230be0f60106362a03c/7cf915f60095705b-c5/s250x400/f6b29f76aaec17f2c94f0ce1c5b96055cf19c3b9.gif" alt="Welcome Image" class="welcome">
+        </div>
+    </div>
+
+    <div class="stamps">
+    <img src="https://klonpa.neocities.org/sectD/stamps/funny/mood%20by%20molly-stamps.png" alt="Stamp 1">
+    <img src="https://klonpa.neocities.org/sectD/stamps/funny/sNaT%20STAMP%20F2U%20by%20Torftastic.png" alt="Stamp 2">
+    <img src="https://u.cubeupload.com/throwup/xfile.png" alt="Stamp 3">
+    <img src="https://raining-starss.neocities.org/garfpenis%20(7).png" alt="Stamp 4">
+    <img src="https://raining-starss.neocities.org/gittyimages%20(19).png" alt="Stamp 5">
+    <img src="https://supplies.ju.mp/assets/images/gallery01/6a07c5ec.png?v=1c1ba870" alt="Stamp 6">
+    <img src="https://supplies.ju.mp/assets/images/gallery02/7eb7b85d.gif?v=1c1ba870" alt="Stamp 7">
+    <img src="https://supplies.ju.mp/assets/images/gallery02/90ddefae.png?v=1c1ba870" alt="Stamp 8">
+    <img src="https://wilardo.crd.co/assets/images/gallery11/f27a8ce7.jpg?v=f3bb9dd0" alt="Stamp 9">
+    <img src="https://wilardo.crd.co/assets/images/gallery13/32659efd.gif?v=f3bb9dd0" alt="Stamp 10">
+    <img src="https://wilardo.crd.co/assets/images/gallery16/c917d53d.png?v=f3bb9dd0" alt="Stamp 11">
+    <img src="https://raining-starss.neocities.org/hoot%20(5).jpg" alt="Stamp 12">
+    <img src="https://raining-starss.neocities.org/tumblr_pehxgumEfo1wkyk4io9_100.png" alt="Stamp 13">       
+    <img src="https://raining-starss.neocities.org/pastel%20(2).gif" alt="Stamp 14">
+    <img src="https://raining-starss.neocities.org/dark%20(4).png" alt="Stamp 15">
+</div>
