@@ -49,7 +49,7 @@
             border-bottom: 2px solid #834333;
             padding-bottom: 10px;
         }
-        .troubleshooting p {
+        .troubleshooting p, .troubleshooting ol {
             color: #834333;
             line-height: 1.6;
         }
@@ -97,42 +97,19 @@
             <a href="https://ibb.co/xq3mGP6">
                 <img src="https://i.ibb.co/60NvbVF/Whats-App-Image-2025-01-26-at-17-45-45-4b86f4eb.jpg" alt="Static Tableau Image">
             </a>
-            <p><b>Code Used:</b></p>
-            <pre>
-&lt;div class='tableauPlaceholder' id='viz1737946080854' style='position: relative'&gt;
-  &lt;noscript&gt;&lt;a href='#'&gt;
-    &lt;img alt='General Government Debt to GDP Ratios' 
-    src='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1_rss.png' 
-    style='border: none' /&gt;
-  &lt;/a&gt;&lt;/noscript&gt;
-  &lt;object class='tableauViz' style='display:none;'&gt;
-    &lt;param name='host_url' value='https://public.tableau.com/' /&gt; 
-    &lt;param name='embed_code_version' value='3' /&gt; 
-    &lt;param name='site_root' value='' /&gt;
-    &lt;param name='name' value='GeneralGovernmentDebttoGDPRatios/Sheet1' /&gt;
-    &lt;param name='tabs' value='no' /&gt;
-    &lt;param name='toolbar' value='yes' /&gt;
-    &lt;param name='static_image' 
-    value='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1.png' /&gt;
-  &lt;/object&gt;
-&lt;/div&gt;
-&lt;script type='text/javascript'&gt;
-    var divElement = document.getElementById('viz1737946080854');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width='100%';
-    vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-&lt;/script&gt;
-            </pre>
-            <p><span class="highlight">Solution</span>: Follow these steps to replace the extra code with a simplified <code>iframe</code>:</p>
+            <p><span class="highlight">Steps to Fix:</span></p>
             <ol>
-                <li>Locate the Tableau graph's original embed code. It often starts with a `<div class='tableauPlaceholder'>` element.</li>
-                <li>Identify the `src` attribute of the `param` with `name='static_image'`. For example:
-                    <pre>value='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1.png'</pre>
+                <li>Locate the Tableau graph's original embed code, which is often in the format starting with a `<div class="tableauPlaceholder">` block.</li>
+                <li>Open the Tableau Public link to the visualization, usually included in the `host_url` or similar parameters. For example:
+                    <pre>https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1</pre>
                 </li>
-                <li>Replace the entire `<div>` block with a simplified `<iframe>` using this URL format:
+                <li>Modify the URL to include these parameters for embedding:
+                    <ul>
+                        <li><code>?:showVizHome=no</code> to hide the Tableau header.</li>
+                        <li><code>&:embed=true</code> to make it an iframe-ready visualization.</li>
+                    </ul>
+                </li>
+                <li>Replace the static block of code with this simplified iframe code:
                     <pre>
 &lt;iframe 
   src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
@@ -141,9 +118,9 @@
 &lt;/iframe&gt;
                     </pre>
                 </li>
-                <li>Test the new iframe in your browser to ensure it is interactive.</li>
+                <li>Test the iframe in your browser to ensure the visualization is interactive.</li>
             </ol>
-            <p><b>Corrected Code:</b></p>
+            <p><span class="highlight">Solution</span>: Use the corrected iframe code below:</p>
             <pre>
 &lt;iframe 
   src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
