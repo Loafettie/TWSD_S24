@@ -69,6 +69,10 @@
             word-wrap: break-word;
             font-size: 11px;
         }
+        .troubleshooting .highlight {
+            color: #ec407a; /* Pink color for headings */
+            font-weight: bold;
+        }
         iframe {
             border: 3px solid #834333;
             border-radius: 5px;
@@ -89,7 +93,7 @@
             <h2>Troubleshooting</h2>
             <p>Here is where I keep a record of all the issues people were having and how we might be able to fix them!</p>
             <hr>
-            <p><b>Problem</b>: Tableau is displaying the graph, but it is a static image and there is extra code?</p>
+            <p><span class="highlight">Problem</span>: Tableau is displaying the graph, but it is a static image and there is extra code?</p>
             <a href="https://ibb.co/xq3mGP6">
                 <img src="https://i.ibb.co/60NvbVF/Whats-App-Image-2025-01-26-at-17-45-45-4b86f4eb.jpg" alt="Static Tableau Image">
             </a>
@@ -122,7 +126,23 @@
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 &lt;/script&gt;
             </pre>
-            <p><b>Solution</b>: Replace the extra code with a simplified <code>iframe</code> to embed the active Tableau visualization.</p>
+            <p><span class="highlight">Solution</span>: Follow these steps to replace the extra code with a simplified <code>iframe</code>:</p>
+            <ol>
+                <li>Locate the Tableau graph's original embed code. It often starts with a `<div class='tableauPlaceholder'>` element.</li>
+                <li>Identify the `src` attribute of the `param` with `name='static_image'`. For example:
+                    <pre>value='https://public.tableau.com/static/images/Ge/GeneralGovernmentDebttoGDPRatios/Sheet1/1.png'</pre>
+                </li>
+                <li>Replace the entire `<div>` block with a simplified `<iframe>` using this URL format:
+                    <pre>
+&lt;iframe 
+  src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
+  width="100%" 
+  height="600"&gt;
+&lt;/iframe&gt;
+                    </pre>
+                </li>
+                <li>Test the new iframe in your browser to ensure it is interactive.</li>
+            </ol>
             <p><b>Corrected Code:</b></p>
             <pre>
 &lt;iframe 
@@ -131,7 +151,7 @@
   height="600"&gt;
 &lt;/iframe&gt;
             </pre>
-            <p><b>Active Visualization:</b></p>
+            <p><span class="highlight">Active Visualization:</span></p>
             <iframe 
                 src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true">
             </iframe>
