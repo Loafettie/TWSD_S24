@@ -90,48 +90,65 @@
         <p>TBD</p>
 
         <div class="troubleshooting">
-            <h2>Troubleshooting</h2>
-            <p>Here is where I keep a record of all the issues people were having and how we might be able to fix them!</p>
-            <hr>
-            <p><span class="highlight">Problem</span>: Tableau is displaying the graph, but it is a static image and there is extra code?</p>
-            <a href="https://ibb.co/xq3mGP6">
-                <img src="https://i.ibb.co/60NvbVF/Whats-App-Image-2025-01-26-at-17-45-45-4b86f4eb.jpg" alt="Static Tableau Image">
-            </a>
-            <p><span class="highlight">Steps to Fix:</span></p>
+            <h2>Troubleshooting: Tableau</h2>
+            <p><span class="highlight">Step-by-Step Guide:</span> Tableau sometimes gives you code blocks that need a bit of formatting before they’ll render correctly. If your Tableau Public code isn’t rendering correctly on GitHub, follow these steps:</p>
             <ol>
-                <li>Locate the Tableau graph's original embed code, which is often in the format starting with a `<div class="tableauPlaceholder">` block.</li>
-                <li>Open the Tableau Public link to the visualization, usually included in the `host_url` or similar parameters. For example:
-                    <pre>https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1</pre>
-                </li>
-                <li>Modify the URL to include these parameters for embedding:
-                    <ul>
-                        <li><code>?:showVizHome=no</code> to hide the Tableau header.</li>
-                        <li><code>&:embed=true</code> to make it an iframe-ready visualization.</li>
-                    </ul>
-                </li>
-                <li>Replace the static block of code with this simplified iframe code:
+                <li>Check the JavaScript code block in the Tableau embed snippet. Look for places where you can add **returns** after semicolons (<code>;</code>) or other logical breakpoints to improve formatting. A properly formatted code block looks like this:
                     <pre>
-&lt;iframe 
-  src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
-  width="100%" 
-  height="600"&gt;
-&lt;/iframe&gt;
+&lt;script type='text/javascript'&gt;                    
+  var divElement = document.getElementById('viz1580496195669');                    
+  var vizElement = divElement.getElementsByTagName('object')[0];                    
+  vizElement.style.width='100%'; 
+  vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+  var scriptElement = document.createElement('script');                    
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+&lt;/script&gt;
                     </pre>
                 </li>
-                <li>Test the iframe in your browser to ensure the visualization is interactive.</li>
-            </ol>
-            <p><span class="highlight">Solution</span>: Use the corrected iframe code below:</p>
-            <pre>
+                <li>Use the **Tableau Public share link** to embed an iframe instead. To do this:
+                    <ol>
+                        <li>Copy the Tableau Public link from the <b>Share</b> button. Example:
+                            <pre>https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?:language=en&:display_count=y&:origin=viz_share_link</pre>
+                        </li>
+                        <li>Delete all text after the question mark (<code>?</code>) in the URL. For example:
+                            <pre>https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?</pre>
+                        </li>
+                        <li>Add the following parameters to the end of the URL:
+                            <pre>:showVizHome=no&:embed=true</pre>
+                        </li>
+                        <li>Your final link should look like this:
+                            <pre>https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?:showVizHome=no&:embed=true</pre>
+                        </li>
+                        <li>Enclose the link in an iframe with the following attributes:
+                            <pre>
 &lt;iframe 
-  src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true" 
-  width="100%" 
-  height="600"&gt;
+  src="https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?:showVizHome=no&:embed=true" 
+  width="90%" 
+  height="500" 
+  seamless 
+  frameborder="0" 
+  scrolling="no"&gt;
 &lt;/iframe&gt;
-            </pre>
-            <p><span class="highlight">Active Visualization:</span></p>
-            <iframe 
-                src="https://public.tableau.com/views/GeneralGovernmentDebttoGDPRatios/Sheet1?:showVizHome=no&:embed=true">
-            </iframe>
+                            </pre>
+                        </li>
+                    </ol>
+                </li>
+                <li>Commit the changes and allow 2–3 minutes for the page to render on your GitHub.io portfolio.</li>
+            </ol>
+            <p><span class="highlight">Alternative Solution:</span> If the above method doesn’t work, here are some troubleshooting tips:</p>
+            <ol>
+                <li>Ensure that the Tableau visualization is set to **Public**. Private visualizations cannot be embedded.</li>
+                <li>Test the iframe link directly in your browser to confirm that it loads the visualization.</li>
+                <li>Double-check that your repository is set up to serve HTML files. If it’s not, your visualization may not render.</li>
+                <li>Use a static image or include a link to the Tableau visualization as a last resort:
+                    <pre>
+&lt;a href="https://public.tableau.com/views/CTSchoolDistrictsbyIncomeandGradeLevels2009-13/Sheet1?:showVizHome=no&:embed=true"&gt;
+  View the Visualization on Tableau Public
+&lt;/a&gt;
+                    </pre>
+                </li>
+            </ol>
         </div>
     </div>
 </body>
